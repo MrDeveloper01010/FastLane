@@ -1,28 +1,37 @@
-let toggle = document.querySelector('.toggle');
-let body = document.querySelector('body');
-let liens = document.getElementsByClassName('menu__link');
+let toggle = document.querySelector('.toggle')
+let body = document.querySelector('body')
+let liens = document.getElementsByClassName('menu__link')
 let whatsToggle = document.querySelector('.fix-whatsApp-contact .whats-icon')
 let chat = document.querySelector('.fix-whatsApp-contact .open-chat-whats')
 let clickToFlex = document.querySelector('.fix-whatsApp-contact .form-icon')
-let displayContainer = document.querySelector('.our-form')
+let displayContainer = document.querySelector('.our-form form')
 for(let i = 0 ; i < liens.length ; i++) {
     liens[i].addEventListener('click', function() {
-        body.classList.toggle('open');
-        body.classList.toggle('overflow-hidden');
+        body.classList.toggle('open')
+        body.classList.toggle('overflow-hidden')
     })
 }
 toggle.addEventListener('click', function() {
     body.classList.toggle('open');
-    body.classList.toggle('overflow-hidden');
+    body.classList.toggle('overflow-hidden')
 })
 
 whatsToggle.addEventListener('click', function() {
     chat.classList.toggle('hide')
+    clickToFlex.classList.toggle('for-mask')
+    body.classList.toggle('overflow-hidden')
 })
 
 clickToFlex.addEventListener('click', function(){
-    displayContainer.classList.toggle('flex-or-not');
+    displayContainer.classList.toggle('flex-or-not')
+    body.classList.toggle('overflow-hidden')
+    whatsToggle.classList.toggle('for-mask')
 })
+
+
+// FORM----------------------------------------------------
+
+
 const selectElement = document.querySelector('select');
 const outputElement = document.querySelector('.c-recoltValue input');
 const checkInput = document.querySelectorAll('input[name="statu"]');
@@ -34,7 +43,7 @@ selectElement.addEventListener('change', (event) => {
   const selectedValue = selectedOption.value;
   if (!selectedValues.includes(selectedValue)) {
     selectedValues.push(selectedValue);
-    outputElement.value = selectedValues.join(', ');
+    outputElement.value = selectedValues.join(', ')
   }
 });
  checkInput[0].addEventListener('click', ()=>{
@@ -45,6 +54,10 @@ selectElement.addEventListener('change', (event) => {
     mask.style.display = "block";
 
  })
+
+
+//  START GSAP--------------------------------------------------------
+
 
 let tl = gsap.timeline();
 

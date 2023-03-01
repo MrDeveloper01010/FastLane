@@ -23,6 +23,12 @@ html {
 body {
     width: 100%;
     height: 100vh;
+    scroll-behavior: smooth;
+    background-image: url(img/bodyBG.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,6 +59,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     color: var(--color1);
+}
+.just-for-fix-navbar{
+    /* width: 100%; */
+    /* position: fixed; */
 }
 
 .logo {
@@ -132,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     font-size:8rem;
 }
-.service-container .quick-links > h2{
+.service-container .quick-links > h2 a{
     font-size: 1rem;
     cursor: pointer;
     text-transform: uppercase;
@@ -238,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .fix-whatsApp-contact .whats-icon svg{
     width: 3rem;
-    fill: rgba(0, 128, 0, 0.522);
+    fill: rgba(0, 243, 85, 0.822);
     position: fixed;
     top: 93%;
     left: 0;
@@ -248,13 +258,13 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 .fix-whatsApp-contact .open-chat-whats{
-    width: 15rem;
-    height: 12rem;
+    width: 17rem;
+    height: 15rem;
     opacity: 0;
     pointer-events: none;
     position: fixed;
-    top: 65%;
-    left: -30%;
+    top: 61%;
+    left: 3%;
     z-index: 999;
     margin-left: 0.8rem;
     margin-top: -0.8rem;
@@ -264,12 +274,11 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 6px;
     padding: 20px;
     padding-top: 50px;
-    transition: opacity 700ms ease;
+    transition: opacity 900ms ease;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 
 }
 .open-chat-whats.hide{ 
-    left: 1%;
     opacity: 1;
     pointer-events: initial;
     transition: left opacity 800s ease;
@@ -287,14 +296,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* About */
-
-
-
-/* Contact */
-
 /* Responsive */
-/* Medium Screens */
 @media all and (max-width: 1327px) {
     .accueil__text__mid h4 {
         font-size: 5rem;
@@ -494,50 +496,62 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* ---------------For your devis------------------------ */
-.our-form {
-    position: fixed;
-    top: 10%;
-    left: 0%;
-    z-index: 999;
-    width: 100%;
-    height: 80vh;
+/* MASK */
+
+.form-icon.for-mask, .whats-icon.for-mask{
+    pointer-events: none;
+    visibility: hidden;
     opacity: 0;
-    display: none;
-    -webkit-transition: opacity 600ms ease;
-    transition: opacity 600ms ease;
+    transition: all 400ms ease;
+}
+
+/* ---------------For your devis------------------------ */
+
+.our-form {
+    width: 100%;
+    height: 100vh;
   }
   
-  .our-form.flex-or-not {
-    opacity: 1;
-    display: flex;
-    -webkit-transition: opacity 0.5s ease;
-    transition: opacity 0.5s ease;
-  }
+  /* */
+
 .fix-whatsApp-contact .form-icon svg{
-    width: 3rem;
-    fill: rgba(118, 118, 118, 0.667);
+    width: 2.5rem;
+    fill: rgb(35, 34, 34);
     position: fixed;
-    top: 83%;
+    top: 85%;
     right: 0%;
     z-index: 999;
     margin-right: 0.8rem;
     margin-top: 3.5rem;
     cursor: pointer;
+    transition: all 400ms ease;
 }
+
 .our-form form {
-    max-width: 60%;
+    position: fixed;
+    top: 3.1%;
+    left: 2%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    height: 0%;
+    transition: all 1s ease;
+    max-width: 95%;
     margin: 0 auto;
     background-color: #f7f7f7;
     padding: 20px;
-    margin-top: 20px;
+    margin: 2px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    height: 100%;
+    filter: none;
     overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #888 transparent;
   }
+  .our-form form.flex-or-not {
+    opacity: 1;
+    height:80%;
+    visibility: visible;
+    transition: all 1s ease;
+  } 
   
   /* Personnalise la poignée de la barre de défilement dans les navigateurs WebKit */
   .our-form form::-webkit-scrollbar {
@@ -577,7 +591,7 @@ h1, h2, h3, h4, h5, h6 {
   input[type = "tel"],
   input[type="text"],
   input[type="email"] {
-    width: 90%;
+    width: 100%;
     height: 2.5rem;
     padding: 10px;
     border-radius: 5px;
@@ -609,11 +623,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
   }
-  .c-recoltValue input{
+  .c-recoltValue input[type = "text"]{
     width: 90%;
     color:rgba(255, 0, 0, 0.756);
     font-size: 13px;
     font-weight: bold;
+    border-radius: 5px 5px 0 0;
   }
   select{
     width: 90%;
@@ -1036,7 +1051,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media all and (max-width:1015px){
-
+    .center_container .header__center_head{
+        flex-direction: column;
+    }
+    .first-off-description,.second-off-description{ 
+        margin: 0.7rem;
+        height: 160px;
+        font-size: 0.7rem;
+      }
     .gL-right{
         margin: 0 auto;
         display: grid;
@@ -1073,10 +1095,36 @@ h1, h2, h3, h4, h5, h6 {
     body{
         overflow-x: hidden;
     }
+    @media all and (max-width:330px){
+        .p-head h1{
+            font-size: xx-large;
+        }
+        .add-flex{
+            width: 90%;
+        }
+        .p-add-flex{
+            display: block;
+        }
+        .p-add-flex p:nth-child(1) {
+            padding-right:0;
+        }
+        .p-head p {
+            /* max-width: 60%; */
+            font-size: 70%;
+            padding-left: 5px;
+        }
+    }
+    @media all and (max-width:510px){
+        .dG .one, .dG .two{
+            flex-direction: column;
+        }
+        .dG .one p:nth-child(1), .dG .two div:nth-child(1), .dG .two div:nth-child(2) {
+            max-width: 95%;
+        }
+    }
 
     @media all and (max-width:445px){
-
-        .gL-head h1, .iR-head h1,.dG-head h1{
+    .gL-head h1, .iR-head h1,.dG-head h1{
             text-align: center;
             font-size: 2rem;
             padding: 0.1rem;
@@ -1087,38 +1135,89 @@ h1, h2, h3, h4, h5, h6 {
     body{
         overflow-x: hidden;
     }
-
-    @media all and (max-width:365px){
-
-        .csC-a-txt .p-head .update-width-for-respo{
-            width: 20%;
+    .iR-right-text  .iR-add-flex .p-head .update-width-for-respon{
+        width: 30%;
+    }
+    .csC-a-txt .p-head .update-width-for-respo{
+        width: 20%;
+    }
+    @media all and (max-width:400px){
+        .iR-right-text  .iR-add-flex .p-head .update-width-for-respon{
+            width: 25%;
         }
+        .csC-a-txt .p-head .update-width-for-respo{
+            width: 12%;
+        } 
         body{
             overflow-x: hidden;
         }
-    
+    }
+    @media all and (max-width:365px){
+
+        .iR-right-text  .iR-add-flex .p-head .update-width-for-respon{
+            width: 20%;
+        }
+        .csC-a-txt .p-head .update-width-for-respo{
+            width: 15%;
+        } 
+
+        body{
+            overflow-x: hidden;
+        }
+        .p-head h1{
+            font-size: xx-large;
+        }
+        .add-flex{
+            width: 90%;
+        }
+        .p-add-flex{
+            display: block;
+        }
+        .p-add-flex p:nth-child(1) {
+            padding-right:0;
+        }
+        .p-head p {
+            /* max-width: 60%; */
+            font-size: 70%;
+            padding-left: 5px;
+        }.p-head h1{
+            font-size: xx-large;
+        }
+        .add-flex{
+            width: 90%;
+        }
+        .p-add-flex{
+            display: block;
+        }
+        .p-add-flex p:nth-child(1) {
+            padding-right:0;
+        }
+        .p-head p {
+            /* max-width: 60%; */
+            font-size: 70%;
+            padding-left: 5px;
+        }
         @media all and (max-width:357px){
 
             .iR-right-text  .iR-add-flex .p-head .update-width-for-respon{
-                width: 30%;
+                width: 18%;
             }
+            .csC-a-txt .p-head .update-width-for-respo{
+                width: 15%;
+            } 
             .iR-foot{
                 width: 100%;
                 margin: 30px 5px 0 5px;
-            }
-            .idM, .csC,.eD, .cP, .vP{
-               margin: 10px 5px 10px 5px;
-            
             }
     }
     @media all and (max-width:350px){
 
         .idM, .csC,.eD, .cP, .vP{
-           margin: 10px -45px 15px 5px;
+           margin: 10px 15px 5px;
            width: 90%;
         }
+ }
 }
-    }
 
         @media all and (max-width:380px){
             .second-p-container {
@@ -1417,11 +1516,6 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-image: url(img/bodyBG.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     color: #848484;
     font-weight: 600;
     letter-spacing: 1.1px;
